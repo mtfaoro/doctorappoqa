@@ -1,0 +1,38 @@
+<ion-view view-title="<img src='img/oqa-icon.png' height='30' width='35'> Histórico" ng-init="getHistory()">
+  <ion-content>  		
+  		<ion-refresher
+    		pulling-text="Puxe para atualizar..."
+    		on-refresh="getHistory()"
+    		spinner>
+  		</ion-refresher>
+  		<div ng-if="mensagem.length">
+          <p class="alert alert-danger">{{mensagem}}</p>
+        </div>
+  		<ion-item ng-repeat="appointment in history">     			
+	     		<div class="card">
+	     				<div class="item item-text-wrap">
+						    <p>
+				     		<span>Especialidade: </span>
+				       	 	<span> {{appointment.speciality.description}} </span>
+							</p>
+							<p>
+					     		<span>Médico: </span>
+					       	 	<span> {{appointment.doctor.name}} </span>
+							</p>
+							<p>
+					     		<span> Quando: Dia {{formatDate(appointment.eventDate)}} às {{appointment.time}} horas </span>
+							</p>
+						</div> 
+						<div class="item item-divider">
+							<p>
+					     		<span><b>Status: </b></span>
+					       	 	<span> {{getStatusDescription(appointment.status)}} </span>
+					       	 	{{setRate(appointment.score)}}
+					       	    <span  ng-hide="setHidden(appointment.status)"> <rating ng-model="rate" max="max" readonly="isReadonly" on-hover="null" on-leave="overStar = null"/> </span>
+							</p>
+						</div>			     		
+	            	</div>
+            </ion-item>
+    	</ion-list>  
+   	</ion-content>   	
+ </ion-view>

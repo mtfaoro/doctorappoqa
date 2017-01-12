@@ -1,0 +1,35 @@
+<ion-view view-title="<img src='img/oqa-icon.png' height='30' width='35'> Perfil do Usuário" ng-init="getProfile()">
+  <ion-content>
+		<div class="list standard-back-color">
+		  <label class="item item-input item-stacked-label">
+		    <span class="input-label">Usuário (DDD + Celular)</span>
+		    <input  type="text" ng-model="user.userId" readonly="true">
+		  </label>
+		  <label class="item item-input item-stacked-label">
+		    <span class="input-label">Nome Completo</span>
+		    <input class="faoro" type="text" ng-model="user.name" placeholder="Joao da Silva">
+		  </label>
+		   <label class="item item-input item-stacked-label">
+		    <span class="input-label">Data de Nascimento</span>
+		    <input type="date" ng-model="user.birthday">
+		  </label>
+		  <label class="item item-input  item-select standard-back-color">
+		    <div class="input-label standard-back-color" width="10em">
+		      Convênio
+		    </div>
+		    <select ng-options="hIsurance.code as hIsurance.name for hIsurance in hInsuranceList" ng-model="user.healthInsurance">
+   				<option style="display:none" value="">Selecione seu convênio</option>
+			</select>
+		    <!--p>Convenio Selecionado: {{user.healthInsurance}}</p-->
+		</label>
+		 <label class="item item-input item-stacked-label">
+		    <span class="input-label">Carteira</span>
+		    <input type="tel" ng-model="user.healthCareId">
+		  </label>
+		</div>
+	
+   	</ion-content>
+   	<ion-footer-bar align-title="center" >
+	 	 <button class="button bar-button button-calm" type="submit" ng-click="updateById()">Atualizar Perfil</button>
+	</ion-footer-bar>
+ </ion-view>

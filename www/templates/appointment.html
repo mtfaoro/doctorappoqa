@@ -1,0 +1,62 @@
+<ion-view view-title="<img src='img/oqa-icon.png' height='30' width='35'> Consultas">
+  <ion-content>
+    <!--h1>Criar form Consulta</h1-->
+    <div class="list list-inset standard-back-color">
+
+    	<div ng-if="mensagem.length">
+          <p class="alert alert-danger">{{mensagem}}</p>
+        </div>
+		
+		<!-- Populado por autocomplete e terá um modal com campo Search... -->
+		<label class="item item-input item-stacked-label ">	    
+			<span class="input-label">Especilidade Médica</span>		     
+		    <input type="text" ng-model="appointmentVO.specialityDesc" placeholder=" ex: Psiquiatria" ng-click="specialityZoom()">
+		</label>
+
+		<!-- Populado por autocomplete .. -->
+		<label class="item item-input item-stacked-label ">	    
+			<span class="input-label">Localidade</span>		     
+		    <input type="text" ng-model="appointmentVO.cityDesc" placeholder=" ex: Caxias do Sul" ng-click="cityZoom()">
+		    <!--input type="text" id="Autocomplete" class="form-control" ng-autocomplete="result2" details="details2" options="options2" /-->
+		</label>
+
+		<!-- Populado por autocomplete e terá um modal com campo Search...ng-dblclick -->
+		<label class="item item-input item-stacked-label ">	    			
+			<span class="input-label">Médico (Opcional)</span>
+			<div>
+				<input type="text" ng-model="appointmentVO.doctorName" placeholder="Aloisio Silva (opcional)" ng-click="doctorZoom()">				
+			</div>
+		</label>
+				
+		<div>									
+			<label class="item item-input item-stacked-label">				
+				<span class="input-label">De</span>
+				<input id="month-per-ini" ng-model="appointmentVO.perIni" type="date">		
+			</label>
+			<label class="item item-input item-stacked-label">			
+				<span class="input-label">Até</span>		
+				<input id="month-per-end" ng-model="appointmentVO.perEnd" type="date">
+			</label>
+		</div>
+			
+					
+		<label class="item item-input  item-select standard-back-color">
+		    <div class="input-label standard-back-color" width="10em">
+		      Convênio
+		    </div>
+			
+		    <select ng-model="appointmentVO.convenio">
+		      <option>Unimed</option>
+		      <option selected>Circulo</option>
+		      <option>IPAM</option>
+		      <option>Fatíma</option>
+		    </select>
+		</label>
+	</div>	
+  </ion-content>
+  <ion-footer-bar align-title="center" >
+ 	<button class="button  button-assertive apt-button" ng-click="clearForm()">Limpar Campos</button>			
+ 	<button class="button  button-calm apt-button" ng-click="goToVerify()">	Verificar Horários</button>
+  </ion-footer-bar>
+
+</ion-view>

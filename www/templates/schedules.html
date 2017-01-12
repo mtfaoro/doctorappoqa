@@ -1,0 +1,59 @@
+<ion-view title="<img src='img/oqa-icon.png' height='30' width='35'> Meus Horários" ng-init="getAppointments()">	
+	<ion-content>
+		<ion-refresher
+    		pulling-text="Puxe para atualizar..."
+    		on-refresh="getAppointments()"
+    		spinner>
+  		</ion-refresher>
+        <div ng-if="mensagem.length">
+          <p class="alert alert-danger">{{mensagem}}</p>
+        </div>
+		<ion-list>
+     		<ion-item ng-repeat="appointment in schedules">     		
+     			
+	     			<div class="card">
+	     				<div class="item item-text-wrap">
+	     					
+						    <p>
+				     			<span><strong>Especialidade:</strong> </span>
+				       	 		<span> {{appointment.speciality.description}} </span>
+							</p>
+							<p>
+					     		<span><strong>Médico:</strong> </span>
+					       	 	<span> {{appointment.doctor.name}} </span>
+							</p>
+							<p>
+					     		<span><strong> Quando:</strong> Dia {{formatDate(appointment.eventDate)}} às {{appointment.time}} horas </span>
+							</p>
+							<p>
+					     		<span><strong>Contato:</strong> </span>
+					     		<span>{{appointment.doctor.doctor.contact}}</span>
+							</p>
+							<p>
+					     		<span><strong>Endereço:</strong> </span>
+					     		<span>{{appointment.doctor.doctor.address.formatted_address}}. </span>
+					     		<span>{{appointment.doctor.doctor.address.complemento}}</span>
+							</p>
+						</div>
+						<div class="item item-divider">
+						    <div class="button-bar Container">
+					            <button class="button button-small button-calm" 
+					            		ng-hide="setHidden('past', appointment.eventDate, appointment.time )"
+					            		type="button" ng-click="avalueteDoctor($index, appointment)">Avaliar Médico</button>
+					            <button class="button button-small button-calm espace-button" 
+					                ng-hide="setHidden('future', appointment.eventDate, appointment.time)"
+					            	type="button" ng-click="getMap(appointment.doctor)">Ver Mapa</button>		
+					            <button class="button button-small button-assertive espace-button"  
+					            		ng-hide="setHidden('future', appointment.eventDate, appointment.time)"
+				            			type="button" ng-click="cancelAppointment($index, appointment)">Desmarcar</button>
+			            	</div>
+						</div>			     		
+	            	</div>
+            	
+      		</ion-item>
+    	</ion-list>
+   	</ion-content>
+</ion-view>
+
+
+

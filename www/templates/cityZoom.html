@@ -1,0 +1,31 @@
+<ion-view ng-controller="citySearchZoom" data-ng-init="getCities()">  
+  <ion-header-bar>
+     <h1 class="title">Cidades</h1>
+    <div class="buttons">
+      <button class="button button-clear" ng-click="closeZoom('ct')">Voltar</button>
+    </div>
+  </ion-header-bar>
+  <ion-content>
+    <label class="item item-input">
+      <i class="icon ion-search placeholder-icon"></i>
+      <input type="search" ng-model="searchText" placeholder="Filtrar...">
+    </label>
+
+    <ion-list id="searchTextResults"  >
+      
+      <ion-item ng-repeat="city in cities | filter:searchText"  class="item item-radio">
+        <label class="item item-radio" ng-click="setCityChoice(city); closeZoom('ct');"> 
+          <input type="radio" name="group">
+            <div class="item-content">
+              <p>
+                <span> {{city.description}} - {{city.state}}
+                </span>                           
+              </p>              
+            </div>
+            <i class="radio-icon ion-checkmark"></i>
+        </label>
+    
+      </ion-item>
+    </ion-list>  
+  </ion-content>
+</ion-view>

@@ -1,0 +1,21 @@
+<ion-view>
+    <ion-tabs tabs-swipable ng-if="isLogged" class="tabs-positive tabs-icon-top">
+        <ion-tab title="Agendamentos" icon="ion-ios-calendar" href="#/app/schedules">
+            <ion-nav-view name="tab-schedule"></ion-nav-view>
+        </ion-tab>
+        <ion-tab title="Nova Consulta" icon="ion-ios-clock-outline" href="#/app/appointment">
+            <ion-nav-view name="tab-appointment"></ion-nav-view>
+        </ion-tab>
+        <ion-tab title="Histórico" icon="ion-ios-albums-outline" href="#/app/history">
+            <ion-nav-view name="tab-history"></ion-nav-view>
+        </ion-tab>
+        <ion-tab title="Perfil" icon="ion-person" href="#/app/profile">
+            <ion-nav-view name="tab-profile"></ion-nav-view>
+        </ion-tab>
+    </ion-tabs>
+    <ion-tabs ng-if="!isLogged" class="tabs-positive tabs-icon-top">
+        <ion-tab title="<img src='img/oqa-top.png' height='50' width='114'>"   href="#/app/newUser">
+            <ion-nav-view name="tab-settings"></ion-nav-view>
+        </ion-tab>
+    </ion-tabs>
+</ion-view>

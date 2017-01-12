@@ -1,0 +1,20 @@
+<ion-view>
+  <ion-content class="padding">
+         <div ng-if="!erro">
+          <p class="alert alert-info" align="center">  Bem Vindo ao <b>OQuantoAntes.</b><br>
+                                        Seu smartphone ainda não está cadastrado! Para cadastrá-lo é simples basta informar o número do seu celular!</p>
+        </div>
+        <div ng-if="erro">
+          <p class="alert alert-danger">{{mensagem}}</p>
+        </div>
+       <form name="authorizationForm">
+          <label class="item item-input item-stacked-label">
+            <span class="input-label"><b>Número</b>(DDD+celular)</span>
+            <input type="tel"  id='txtCellphone' ng-model="data.cellphoneNumber"  placeholder="ex:5491001493">
+          </label>
+      </form>
+  </ion-content>
+  <ion-footer-bar align-title="center" >
+     <button class="button bar-button button-calm" type="button" ng-click="checknumber()">Cadastrar</button
+  </ion-footer-bar>
+</ion-view>

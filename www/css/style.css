@@ -1,0 +1,164 @@
+.modal{
+  top: 0 ;
+  bottom: 0 ; 
+  left: 0 ;
+  right: 0 ;
+  width: 100% ;
+}
+
+ul.rating li {
+  display: inline;
+  border: 0px;
+  background: none;
+  padding: 4px 8px;
+}
+ul.rating li i {
+  font-size: 16px;
+}
+
+#form {
+
+    margin-left: 50px;
+    width: 600px
+}
+
+.indent {
+    margin-left: 50px;
+}
+
+.move-down {
+    /*margin-top: 100px;*/
+}
+
+
+.standard-back-color,
+ion-content{
+	background-color: #FFF;
+}
+
+input[type="text"],
+input[type="tel"],
+input[type="date"] {
+  background-color: #FFF;
+	border: 2px solid #CCEEFA;
+  margin-right: 20px;
+
+}
+
+.item-input {
+	border-style: hidden;
+	
+}
+
+.side-to-side{ 
+	display : inline-block;
+	width : 46%;
+}
+
+.apt-button{
+	display : inline-block;
+	width : 49%;
+}
+
+.espace-button{
+  width : 40%;
+}
+
+.Container button{ /* You Can Name it what you want*/
+margin-right:8px;
+}
+.Container button:last-child{
+margin-right:0px;
+/*so the last one dont push the div thas giving the space only between the inputs*/
+}
+
+.bar-button{
+  display: block;
+  width: 100%;
+}
+
+.bar-fixed{
+  bottom: 45px;
+  border-top-width: 1px;
+  border-bottom-width: 0;
+  background-position: top;
+  height: 68px; 
+}
+ 
+.bottom-margin{
+  border-bottom-width: 68px;
+  height: 100px; 
+}
+
+.bar.bar-positive,
+.tabs-positive > .tabs, .tabs.tabs-positive 
+ {
+  background: linear-gradient(90deg, #66cccc 30%, #3399cc 70%);
+  border-color: #66cccc;
+}
+
+.button.button-calm,
+.button.button-assertive
+{
+  background: linear-gradient(90deg, #66cccc 99.99%, #3399cc 0.01%);
+  border-color: #66cccc;
+}
+
+.alert {
+  
+  padding: 10px;
+  margin-bottom: 12px;
+  border: 1px solid transparent;
+  border-radius: 4px;
+}
+
+.alert-danger {
+  background: linear-gradient(90deg, #f2bebe 30%, #f7e0e0 70%);
+  color: #cc4233;
+  border-color: #cc4233;
+}
+
+.alert-info {
+  background: #fff;
+  color: #000;
+  border: 2px solid #CCEEFA;
+  padding: 25px;
+  
+}
+
+
+.card, .list-inset {
+  border-radius: 2px;
+  background-color: #fff; }
+
+.list:last-child.card {
+    margin-bottom: 10px; }
+
+/*
+.list-header {
+  margin-top: 10px;
+  padding: 3px 9px; }
+
+.card .item.item-input input, .list-inset .item.item-input input, .padding > .list .item.item-input input, .padding-horizontal > .list .item.item-input input {
+  padding-right: 14px; }
+
+.item {
+  padding: 8px;
+}
+*/
+
+/*
+
+.tab-item{
+  max-width: 300px;
+}
+
+.ion-oqa-top { 
+  content: url('../img/oqa-top.png')  !important;
+}
+.tab-item-oqa{
+  max-width: 100% !important;
+  padding-top: 5px;
+  height: 100px !important;
+}
+*/

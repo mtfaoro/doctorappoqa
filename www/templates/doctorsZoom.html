@@ -1,0 +1,32 @@
+<ion-view ng-controller="doctorsSearchZoom" data-ng-init="getDoctors()">  
+  <ion-header-bar>
+     <h1 class="title">Busca Médicos</h1>
+    <div class="buttons">
+      <button class="button button-clear" ng-click="closeZoom('dz')">Voltar</button>
+    </div>
+  </ion-header-bar>
+  <ion-content>
+    <label class="item item-input">
+      <i class="icon ion-search placeholder-icon"></i>
+      <input type="search" ng-model="searchText" placeholder="Filtrar...">
+    </label>
+
+    <ion-list id="searchTextResults"  >
+      
+      <ion-item ng-repeat="doctor in doctors | filter:searchText"  class="item item-radio">
+        <label class="item item-radio" ng-click="setDoctorChoice(doctor); closeZoom('dz');"> 
+          <input type="radio" name="group">
+            <div class="item-content">
+              <p>
+                <span>Dr(a). </span>
+                <span> {{doctor.name}} {{doctor.lastname}} - {{doctor.doctor.speciality.description.toProperCase()}}</span>                           
+              </p>              
+            </div>
+            <i class="radio-icon ion-checkmark"></i>
+        </label>
+    
+      </ion-item>
+    </ion-list>
+  
+  </ion-content>
+</ion-view>

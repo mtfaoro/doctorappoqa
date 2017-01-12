@@ -1,0 +1,12 @@
+{
+  "name": "OQuantoAntes",
+  "app_id": "e70625a2",
+  "gulpStartupTasks": [
+    "sass",
+    "watch"
+  ],
+  "watchPatterns": [
+    "www/**/*",
+    "!www/lib/**/*"
+  ]
+}

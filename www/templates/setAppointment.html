@@ -1,0 +1,40 @@
+<ion-view view-title="<img src='img/oqa-icon.png' height='30' width='35'> Seleção de horário"  cache-view="false">  
+  <ion-content>
+         <div class="bottom-margin">
+          <ion-list>      
+            <div ng-repeat="freeTime in schdlFreeTime">
+              <ion-item  class="item-stable"
+                                  ng-click="toggleGroup(freeTime.day)"
+                                  ng-class="{active: isGroupShown(freeTime.day)}">
+                  <i class="icon" ng-class="isGroupShown(freeTime.day) ? 'ion-minus' : 'ion-plus'"></i>
+                        &nbsp;
+                  <span><b>Dia: </b></span>
+                  <span> {{freeTime.day}} </span>   
+              </ion-item>
+
+              <ion-item class="item-accordion item-radio"
+                        ng-repeat="hourChk in freeTime.time"
+                          ng-show="isGroupShown(freeTime.day)">
+                  <label class="item item-radio"  ng-click="setChange(freeTime._id, hourChk, freeTime.day);"> 
+                    <input type="radio" name="group" >
+                      <div class="item-content"> 
+                        <p>                     
+                          <span> {{hourChk}} </span>                           
+                        </p>              
+                      </div>
+                      <i class="radio-icon ion-checkmark"></i>
+                  </label>
+              </ion-item>
+            </div>
+          </ion-list>
+        </div>
+    </ion-content>
+    <ion-footer-bar align-title="center" >
+        <button class="button button-assertive apt-button" ng-click="cancelAppoint()">Cancelar</button>     
+        <button class="button button-calm apt-button" ng-click="hitAppoint()">Marcar consulta</button>      
+    </ion-footer-bar>   
+</ion-view>
+
+
+
+

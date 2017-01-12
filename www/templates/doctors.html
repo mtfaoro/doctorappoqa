@@ -1,0 +1,40 @@
+<ion-view >  
+  <ion-header-bar>
+     <h1 class="title">Seleciona Médico</h1>
+    <!--div class="buttons">
+      <button class="button button-clear" ng-click="closeZoom('dl')">Voltar</button>
+    </div-->
+  </ion-header-bar>
+  <ion-content>
+    <label class="item item-input">
+      <i class="icon ion-search placeholder-icon"></i>
+      <input type="search" ng-model="searchText" placeholder="Filtrar...">
+    </label>
+
+    <ion-list id="searchTextResults"  >
+      
+      <ion-item ng-repeat="d in doctorsList | filter:searchText | orderBy:'-doctor.doctor.ranking'"  class="item item-radio">
+        <label class="item item-radio" ng-click="setDoctorChoice(d.doctor);"> 
+            <input type="radio" name="group">            
+            <div class="list">
+              <a class="item item-avatar" href="#">
+                <img src="img/user.png">
+                <h2> {{d.doctor.name}}</h2>
+                <p> {{d.doctor.doctor.contact}} </p>                
+                {{setRate(d.doctor.doctor.ranking)}}                              
+                <h6>({{d.doctor.doctor.ranking | number:2}}) - {{d.doctor.doctor.evaluations}} Avaliações </h6>                         
+                <span  ng-hide="setHidden(d.doctor.doctor.ranking)"> <rating ng-model="rate" max="max" readonly="isReadonly" on-hover="null" on-leave="overStar = null"></rating></span>
+              </a>
+            </div>
+            <i class="radio-icon ion-checkmark"></i>
+        </label>
+    
+      </ion-item>
+    </ion-list>
+
+    <div class="button-bar">  
+      <a class="button icon-left ion-chevron-left "   ng-click="closeZoom('dl')" >Voltar</a>
+      <a class="button icon-right ion-chevron-right " ng-click="goToVerify('dl')">Buscar horários</a>      
+    </div>
+  </ion-content>
+</ion-view>

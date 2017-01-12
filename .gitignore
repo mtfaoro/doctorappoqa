@@ -1,0 +1,10 @@
+platforms
+plugins
+resources
+www/lib
+
+node_modules
+.tmp
+.sass-cache
+.bak
+bower_components

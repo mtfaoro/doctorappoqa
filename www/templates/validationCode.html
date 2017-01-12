@@ -1,0 +1,28 @@
+<ion-view>
+  <ion-content class="padding">
+        <div ng-if="!erro">
+          <p class="alert alert-info">O código de validação é composto pelos últimos 4 dígitos da chamada recebida com o prefixo informado.</p>
+        </div>
+        <div ng-if="erro">
+          <p class="alert alert-danger">{{mensagem}}</p>
+        </div>
+        <form>
+          <label class="item item-input item-stacked-label">
+            <span class="input-label">Número (Cliente):</span>
+            <input type="text"  readonly="true" ng-model="data.cellphoneNumber">
+          </label>
+          <label class="item item-input item-stacked-label">
+            <span class="input-label">Prefixo (Chamada):</span>
+            <input type="text"  readonly="true" ng-model="data.prefix_checkmobi">
+          </label>
+          <label class="item item-input item-stacked-label">
+            <span class="input-label">Código Validação:</span>
+            <input type="tel"  ng-model="data.code">
+          </label>
+        </form>
+  </ion-content>
+  <ion-footer-bar align-title="center" >
+      <button class="button apt-button button-assertive"  ng-click="recieveNewCall()">Receber nova chamada</button>
+      <button class="button apt-button button-calm"       ng-click="validateCode()">Validar Código</button>
+   </ion-footer-bar>
+</ion-view>
